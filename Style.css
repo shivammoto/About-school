@@ -1,0 +1,1346 @@
+*{
+			margin: 0;
+			padding: 0;
+			list-style: none;;
+		}
+
+	/*.....................Nav Bar For 1000px Screen.......................................*/
+
+		.Nav{
+			position: relative;
+			display:none;
+		}
+		@media (max-Width:991px){
+			.Nav{
+				display: flex;
+				position:fixed;
+				width:100%;
+				height:10vh;
+				background-color:#1B0697FC;
+				z-index:102;
+			}
+		}
+
+	/*.....................Nav Bar For 720px Screen.......................................*/
+
+		.Nav{
+			position: relative;
+			display:none;
+		}
+		@media (max-Width:720px){
+			.Nav{
+				display: flex;
+				position:fixed;
+				width:100%;
+				height:8.8vh;
+				background-color:#1B0697FC;
+				z-index:102;
+			}
+		}
+		.NavInner{
+			position: relative;
+			width:100%;
+			height:100%;
+		}
+		.NavInner .LogoSection img{
+			height:100%;
+			width:20%;
+		}
+
+
+
+	/*............................Scroll_Top_up.....................................*/
+
+
+	#UpBtn{
+		position: fixed;
+		bottom:1.5rem;
+		right: 2.5rem;
+		z-index:105;
+		background-color:#00FEB0;
+		height:2.1rem;
+		width:2.1rem;
+		border-radius:50%;
+		display: none;
+		justify-content: center;
+		justify-items: center;
+		align-items: center;
+		box-shadow:0 0 10px rgba(0, 0, 0, 0.8);
+	}
+	#UpBtn i{
+		color: #fff;
+	}
+
+	/*............................Scroll_Top_up 720px.....................................*/
+
+	@media (max-Width:720px){
+		#UpBtn{
+			position: fixed;
+			bottom:0.8rem;
+			right: 0.8rem;
+			z-index:105;
+			opacity: 0;
+		}
+	}
+
+
+	/*.....................Language.......................................*/
+
+	.ClickBtn{
+		position: fixed;
+		bottom:0rem;
+		right:6.1rem;
+		height:1.7rem;
+		width:10rem;
+		cursor: pointer;
+		background-color:#fff;
+		z-index:105;
+		display: flex;
+		justify-content: left;
+		justify-items: center;
+		align-items: center;
+		padding-left:0.3rem;
+		border-top: 2px solid #00FEB0;
+	}
+	.ClickBtn::after{
+		position: absolute;
+		right:0.7rem;
+		top:0.4rem;
+		background-image: url('https://w7.pngwing.com/pngs/792/964/png-transparent-computer-icons-up-arrow-angle-black-arrow-icon.png');
+		background-size:22px;
+		background-position-x: 50%;
+		background-position-y: center;
+		content: '';
+		z-index:106;
+		height:1rem;
+		width:1rem;
+		transition:.2s;
+	}
+	.ClickBtn img, .Language img{
+		height:1rem;
+		width:1rem;
+	}
+	.ClickBtn h5, .Language h5{
+		text-transform: capitalize;
+		color: #000;
+		font-size:0.8rem;
+		padding-top:0.5rem;
+		padding-left:0.3rem;
+	}
+
+	.Language{
+		position: fixed;
+		bottom:1.6rem;
+		right:6.2rem;
+		height:0rem;
+		width:9.8rem;
+		cursor: pointer;
+		background:linear-gradient(40deg,#C93A0DCF,#0D45C9D6,#C9B50DE0,#FFC371E0);
+		background-size:300% 300%;
+		z-index:105;
+		padding-left:0.3rem;
+		overflow:auto;
+		animation:colorflow 16s linear infinite;
+		transition:.4s;
+	}
+	.Language a{
+		list-style: none;
+		text-decoration: none;
+	}
+	.Language1{
+		display: flex;
+		justify-content: left;
+		justify-items: center;
+		align-items: center;
+		height:1.3rem;
+	}
+	::-webkit-scrollbar{
+		width:5px;
+		background-color:#fff;
+	}
+	::-webkit-scrollbar-thumb{
+		background-color: #888;
+	}
+
+	#LangBtn:checked ~ .ClickBtn::after{
+		transform: rotate(180deg);
+	}
+	#LangBtn:checked ~ .Language{
+		height:8.7rem;
+	}
+
+	/*.....................Language 720px screen.................................*/
+	@media (max-Width:720px){
+		.ClickBtn, .Language{
+			right:1.3rem;
+		}
+	}
+	/*.....................Side Bar For 720px Screen.......................................*/
+
+		#UpDownMenu, .ThreeDash{
+			display: none;
+		}
+		.ThreeDash{
+			display: none;
+		}
+		.ThreeDash{
+			display: flex;
+			justify-content:center;
+			justify-items: center;
+			align-items: center;
+			flex-direction: column;
+		}
+		.ThreeDash .Top, .ThreeDash .Middle, .ThreeDash .Bottom{
+			display: none;
+		}
+		@media (max-Width:720px){
+			.ThreeDash .Top, .ThreeDash .Middle, .ThreeDash .Bottom{
+				display: inline;
+				background-color:#fff;
+				margin-top:0.4rem;
+				height:0.2rem;
+				width:70%;
+				z-index:102;
+				line-height:0.5rem;
+				transition: .5s;
+			}
+		}
+		@media (max-Width:720px){
+			#UpDownMenu{
+				position: fixed;
+				top:4.6rem;
+				left:0;
+				display: flex;
+				flex-direction: column;
+				color: #fff;
+				overflow: auto;
+				z-index: 101;
+				width:100%;
+				height:auto;
+				overflow: hidden;
+				background:linear-gradient(40deg,#C93A0DCF,#0D45C9D6,#C9B50DE0,#FFC371E0);
+				background-size:300% 300%;
+				transform: translateY(-100%);
+				transition: transform 400ms ease-in-out;
+				animation:colorflow 16s linear infinite;
+				backdrop-filter:blur(3px);
+			}
+		}
+		@keyframes colorflow{
+			0%{
+				background-position:0 50%;
+			}
+			50%{
+				background-position:100% 50%;
+			}
+			100%{
+				background-position:0 50%;
+			}
+		}
+		@media (max-Width:720px){
+			.ThreeDash{
+				display: flex;
+				position: fixed;
+				top:0.8rem;
+				right:1rem;
+				height:2rem;
+				width:2.4rem;
+				z-index:102;
+			}
+		}
+		#SideBar:checked ~ #UpDownMenu{
+			transform: translateY(0rem);
+		}
+		#SideBar:checked ~ .ThreeDash > .Top{
+			transform:rotate(45deg);
+			position: absolute;
+		}
+		#SideBar:checked ~ .ThreeDash > .Middle{
+			opacity: 0;
+		}
+		#SideBar:checked ~ .ThreeDash > .Bottom{
+			transform:rotate(-45deg);
+			position: absolute;
+		}
+		@media (max-Width:720px){}
+		@media (max-Width:720px){}
+
+		#UpDownMenu details{
+			border-bottom:1px solid #fff;
+			width: 100%;
+			transition:all .3s ease-in-out;
+		}
+		#UpDownMenu summary{
+			display: flex;
+			justify-content: space-between;
+			justify-items: center;
+			align-items: center;
+			height:3rem;
+			padding-left:1rem;
+			padding-right: 1rem;
+		}
+		details[open]{
+			background-color: #8B8DA3E0;
+		}
+		#UpDownMenu p{
+			border-bottom:1px solid #fff;
+			height:100%;
+			width:100%;
+		}
+		#UpDownMenu a{
+			list-style: none;
+			text-decoration: none;
+			color: #fff;
+			padding-left:1rem;
+			padding-right: 1rem;
+		}
+		#UpDownMenu summary:hover i{
+			transform: rotate(90deg);
+		}
+		#UpDownMenu h6{
+			text-transform: uppercase;
+			font-size:0.9rem;
+		}
+
+
+
+
+
+		.TwoSection{
+			height:100%;
+		}
+		.TwoSectionHome{
+			display: flex;
+			justify-content: space-between;
+			align-content: center;
+			height:100%;
+
+			background-image: url('https://www.british-school.org/wp-content/uploads/2024/01/map2.webp');
+			background-attachment: fixed;
+		}
+		.FirstSection{
+			position: relative;
+			background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+			height:100%;
+			position: fixed;
+			z-index:100;
+		}
+		@media (max-Width:720px){
+			.FirstSection{
+				display: none;
+			}
+		}
+		@media (max-Width:1000px){
+			.FirstSection{
+				display: none;
+			}
+		}
+		.SchoolLogo img{
+			height:9rem;
+			width:15.5rem;
+			padding-left:4rem;
+			padding-right: 4rem;
+			padding-top:2rem;
+		}
+		.Content{
+
+			margin-top:2rem;
+		}
+		.Content section, .Content .Dropdown h4, .SubMenuList h3{
+			display: flex;
+			justify-content: space-between;
+			justify-items: center;
+			align-items: center;
+
+			width:100%;
+			border-bottom:0.1rem solid lightgray;
+			height:3rem;
+			transition:.5s;
+		}
+		.Content section:hover{
+			background-color: #00FEB0;
+			cursor: pointer;
+		}
+		.Content section h5, .Content .Dropdown a, .Content .SubMenuList a{
+			color: #fff;
+			text-transform: uppercase;
+			font-size:0.9rem;
+			font-family: arial;
+			padding-left:1rem;
+			font-weight: bold;
+			text-decoration: none;
+			list-style: none;
+		}
+		.Content section i{
+			padding-right:1rem;
+			font-size:0.8rem;
+			font-weight: bold;
+			color:#000;
+		}
+		.Content .Dropdown, .Content .SubMenuList{
+			display: none;
+			position:absolute;
+			top:0;
+			right:-18rem;
+			background-color:#00FEB0D4;
+			height:190vh;
+			width:18rem;
+			padding-top:2rem;
+			transition:.9s;
+		}
+		.Content .SubMenuList{
+			background-color:#00FEB0A8;
+		}
+		.Content .Dropdown h4, .Content .SubMenuList h3{
+			border-bottom:0.1rem solid #00FEB0C2;
+		}
+		.Content section:hover .Dropdown{
+			display: flex;
+			flex-direction: column;
+		}
+		.SubMenu:hover .SubMenuList{
+			display: flex;
+			flex-direction: column;
+		}
+		.SocialMediaLogo{
+			position: absolute;
+			left: 0;
+			bottom:1rem;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			justify-items: center;
+			align-items: center;
+		}
+		.SocialMediaLogo .instagram, .SocialMediaLogo .facebook, .SocialMediaLogo .linkedin, .SocialMediaLogo .twitter, .SocialMediaLogo .youtube {
+			display: flex;
+			justify-content: center;
+			justify-items: center;
+			align-items: center;
+			cursor: pointer;
+			height:1.8rem;
+			width:2rem;
+			border-radius:52% 48% 47% 52% / 100% 100% 100% 99% ;
+			margin-right:0.3rem;
+			transition:.3s;
+		}
+		.SocialMediaLogo .instagram{
+			background:radial-gradient(circle at 33% 100%,#fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecd);
+		}
+		.SocialMediaLogo .instagram i{
+			color:#fff;
+			font-size:1.3rem;
+		}
+		.SocialMediaLogo .facebook, .SocialMediaLogo .linkedin{
+			background-color:#155AD9;
+		}
+		.SocialMediaLogo .facebook i, .SocialMediaLogo .linkedin i, .SocialMediaLogo .twitter i{
+			color: #fff;
+		}
+		.SocialMediaLogo .twitter{
+			background-color: #000;
+		}
+		.SocialMediaLogo .youtube{
+			background-color:#fff;
+		}
+		.SocialMediaLogo .youtube i{
+			color: red;
+		}
+		.SocialMediaLogo section:hover{
+			background-color: #fff;
+		}
+		.SecondSection{
+			overflow: hidden;
+			margin-left:15rem;
+			width:100%;
+			height:100%;
+		}
+		@media (max-Width:720px){
+			.SecondSection{
+				margin-left:0rem;
+				margin-top:4rem;
+			}
+		}
+		@media (max-Width:1000px){
+			.SecondSection{
+				margin-left:0rem;
+			}
+		}
+		.slider {
+			/*position: relative;
+		    width: 100%;
+		    height:100vh;
+		    overflow: hidden;
+		    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+		    background-color:orange;*/
+		}
+
+		.slides {
+			position: relative;
+		    display: flex;
+		    flex-direction: column;
+		    transition: transform 0.5s ease-in-out;
+		    width:100%;
+		    height:110vh;
+		    overflow: hidden;
+		}
+		@media (max-Width:720px){
+			.slides{
+				width:100%;
+		    	height:53vh;
+		    	overflow: hidden;
+			}
+		}
+		.slides span, .SecondSlides span{
+			height:100%;
+			width: 100%;
+		}
+		.slides img {
+		    width:100%;
+		    height:100%;
+		}
+		@media (max-Width:720px){
+			.slides img {
+		    	width:100%;
+		    	height:53vh;
+		    	transform: scale(1);
+			}
+		}
+		.slidesText{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			position: absolute;
+			left:5rem;
+			bottom:3rem;
+			background:rgba(0, 0, 0, 0.6);
+			height:13rem;
+			width:25rem;
+			overflow: hidden;
+			border-radius:5px;
+			padding-left:2rem;
+		}
+		@media (max-Width:720px){
+			.slidesText{
+				left:0rem;
+				bottom:2rem;
+				height:10rem;
+				width:100%;
+			}
+		}
+		.slidesText h4{
+			color:orange;
+			font-size:4rem;
+			font-family: "Dancing Script", cursive;
+		}
+		.slidesText h6{
+			color:#fff;
+			font-size:4rem;
+			font-weight:lighter;
+			font-family: "Roboto Condensed", sans-serif;
+			text-transform: uppercase;
+		}
+
+
+
+		.swiper {
+			position: relative;
+		      width: 100%;
+		      height:70vh;
+		      margin-top:1rem;
+		    }
+
+		    .swiper-slide {
+		      font-size: 18px;
+		      background: #fff;
+		    }
+
+		    .swiper-slide img {
+		      display: block;
+		      width: 100%;
+		      height: 100%;
+		      object-fit: cover;
+		    }
+
+		.SecondSlidesText{
+			display: flex;
+			justify-content: left;
+			flex-direction: column;
+			position: absolute;
+			left:0rem;
+			top:0rem;
+			background:rgba(0, 0, 0, 0.8);
+			height:100%;
+			width:100%;
+			overflow: hidden;
+			padding-left:4rem;
+			padding-top:3rem;
+		}
+		.SecondSlidesText h1{
+			font-family: "Roboto", sans-serif;
+			font-size:3.4rem;
+			font-weight: bold;
+			color:#c79e2d;
+			text-transform: uppercase;
+			margin-bottom:7rem;
+		}
+		.SecondSlidesText h3{
+			font-family: "Roboto", sans-serif;
+			font-size:1.8rem;
+			color:#f9d688;
+			text-transform: uppercase;
+		}
+		.SecondSlidesText p{
+			font-family: "Roboto", sans-serif;
+			font-size:1.3rem;
+			color:#fff;
+			line-height:2rem;
+			width:90%;
+		}
+
+		/*.........................................Card_Swippwe 720px screen Size................................................ */
+
+		@media (max-Width:720px){
+			.SecondSlidesText{
+				padding-top:40%;
+			}
+		}
+		@media (max-Width:720px){
+			.Card_Swippwe{
+				height:100vh;
+				width:100%;
+			}
+		}
+		@media (max-Width:720px){
+			.SecondSlidesText h1{
+				font-size:1.4rem;
+				margin-bottom:0.5rem;
+			}
+		}
+		@media (max-Width:720px){
+			.SecondSlidesText h3{
+				font-size:1rem;
+			}
+		}
+		@media (max-Width:720px){
+			.SecondSlidesText p{
+				font-size:0.8rem;
+				line-height:1rem;
+			}
+		}
+		
+		
+
+		/*.....................................END Of Card_Swippwe 720px screen Size................................................ */
+
+		@media (max-Width:720px){
+			.Card_Swippwe{
+				width:100%;
+		    	height:55vh;
+		    	overflow: hidden;
+			}
+		}
+		.carouselText{
+			display: flex;
+			justify-content: center;
+			justify-items: center;
+			align-items: center;
+			flex-direction: column;
+			padding:4rem;
+			position: absolute;
+			top:2.5rem;
+			right:2.5rem;
+			height:21rem;
+			width:35.5rem;
+			background: rgba(152, 134, 112, 0.9);
+		}
+		@media (max-Width:720px){
+			.carouselText{
+				height:100%;
+				width:13rem;
+				top:0rem;
+				right:0rem;
+				padding:1rem;
+			}
+		}
+		.carouselText h6{
+			color: #fff;
+			font-size:1.3rem;
+			text-align: center;
+		}
+
+		/*.........................................Second 720px screen Size................................................ */
+
+		@media (max-Width:720px){
+			.Second{
+				height:19vh;
+				width: 100%;
+			}
+		}
+		@media (max-Width:720px){
+			.carouselText h6{
+				font-size:0.7rem;
+			}
+		}
+		.carouselText p{
+			color: #fff;
+			text-align: center;
+		}
+		@media (max-Width:720px){
+			.carouselText p{
+				font-size:0.5rem;
+			}
+		}
+		@media (max-Width:720px){}
+		@media (max-Width:720px){}
+		@media (max-Width:720px){}
+		@media (max-Width:720px){}
+		@media (max-Width:720px){}
+
+
+
+
+		/*.....................................END OfSecond 720px screen Size................................................ */
+		.TourBox{
+			margin-top: 2rem;
+			position: relative;
+			height:70vh;
+			width: 100%;
+			overflow: hidden;
+		    z-index: 1;
+		}
+		@media (max-Width:720px){
+			.TourBox{
+				height:25vh;
+			}
+		}
+		.TourBox .Zoom_In_And_Out{
+			animation:Zoom 7s ease-in-out infinite;
+			animation-direction: alternate;
+			height:140%;
+			width: 100%;
+			transform: scale(2);
+		}
+		@media (max-Width:720px){
+			.TourBox .Zoom_In_And_Out{
+				height:140%;
+			}
+		}
+		@keyframes Zoom{
+			0%{
+				transform: scale(1.0);
+			}
+			100%{
+				transform:scale(2);
+			}
+		}
+
+		.TourBox .TourBoxText{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			position: absolute;
+			left:37%;
+			top:21%;
+			height:13rem;
+			width:17rem;
+			background:rgba(0, 254, 176, 0.8313725490196079);
+			border-radius:0.2rem;
+		}
+		@media (max-Width:720px){
+			.TourBox .TourBoxText{
+				height:100%;
+				width:13rem;
+				left:20%;
+				top:0;
+			}
+		}
+		.TourBox .TourBoxText img{
+			height:5.5rem;
+			width:7rem;
+		}
+		.TourBox .TourBoxText h5{
+			color: #fff;
+			font-weight: bold;
+			font-size: 1.5rem;
+			text-transform: uppercase;
+		}
+/* ............................................................CrativeBox........................................................................*/
+		.CrativeBox{
+			position: relative;
+			width:100%;
+			height:auto;
+			z-index: 1;
+			padding-top:1rem;
+			padding-bottom:1rem;
+			background-color:#fff;
+		}
+		.CrativeBox, .Box, .AdmisionArts, .Box2{
+			display: flex;
+			justify-content:space-evenly;
+			flex-wrap: wrap;
+		}
+		.Box2{
+			margin-top:1rem;
+		}
+
+		.AdmisionArts{
+			width:34rem;
+			height:35rem;
+		}
+		.Admission, .Arts{
+			position: relative;
+			height:16rem;
+			width:16rem;
+			margin-left:0.2rem;
+			transition:.6s;
+		}
+		
+		.Admission::before{
+			/*position: absolute;
+			content: 'admission process';
+			left: 0;
+			top: 0;
+			background-color: lime;
+			width: 100%;
+			height:3rem;*/
+		}
+		.Results{
+			position: relative;
+			height:18.5rem;
+			width:96%;
+		}
+		.LeaderShip{
+			position: relative;
+			height:35rem;
+			width:34rem;
+			transition: .4s;
+		}
+		.Activity{
+			position: relative;
+			height:18.5rem;
+			width:32.5rem;
+			margin-left:0.6rem;
+		}
+		.Support{
+			position: relative;
+			height:18.5rem;
+			width:33.9rem;
+			margin-left:0.6rem;
+		}
+		.Admission img, .Arts img, .Results img, .LeaderShip img, .Activity img, .Support img{
+			height:100%;
+			width:100%;
+		}
+		.OneWord{
+			display: flex;
+			justify-items: center;
+			align-items: center;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			background-color: #00FEB0;
+			width: 100%;
+			height:2.5rem;
+			padding-left:1rem;
+			padding-top:0.8rem;
+			transition:.4s;
+		}
+		.OneWord p{
+			text-transform: uppercase;
+			color: #fff;
+			font-weight: bold;
+		}
+		.TExt{
+			position: absolute;
+			top:0;
+			left:0;
+			height:100%;
+			width: 100%;
+			background-color:#00FEB0BA ;
+			display: none;
+			justify-content: center;
+			justify-items: center;
+			align-items: center;
+			flex-direction: column;
+			padding-left:0.2rem;
+			padding-right:0.2rem;
+			transition:.5s;
+		}
+		.TExt h3{
+			color:#fff;
+			text-align: center;
+			font-size:1.8rem;
+			text-transform: uppercase;
+		}
+		.TExt p{
+			color:#fff;
+			text-align: center;
+			font-size:1rem;
+		}
+		.TExt input{
+			border: none;
+			outline:3px solid #00FEB0;
+			background-color: #00FEB0;
+			padding-left: 1rem;
+			padding-right:1rem;
+			padding-top: 0.5rem;
+			padding-bottom: 0.5rem;
+			color: #fff;
+			transition:.2s;
+		}
+		.TExt input:hover{
+			background-color:transparent;
+			
+		}
+		.Admission:hover .TExt, .Arts:hover .TExt, .Results:hover .TExt,
+		 .LeaderShip:hover .TExt, .Activity:hover .TExt, .Support:hover .TExt{
+			display: flex;
+		}
+		.Admission:hover .OneWord, .Arts:hover .OneWord,
+		 .Results:hover .OneWord, .LeaderShip:hover .OneWord, .Activity:hover .OneWord, .Support:hover .OneWord{
+			display: none;
+		}
+
+/*		.....................................................All CrativeBox 110% screen size....................................................      */
+
+
+		@media (max-Width:1000px){
+			.Admission, .Arts{
+				position: relative;
+				height:30rem;
+				width:30rem;
+				margin-top:1rem;
+				transition:.6s;
+			}
+		}
+		@media (max-Width:1000px){
+			.CrativeBox, .Box, .AdmisionArts{
+				width:100%;
+				height:auto;
+				margin-top:1rem;
+
+			}
+		}
+		@media (max-Width:1000px){
+			.Results, .Activity, .Support{
+				width:98.6%;
+				height:29rem;
+				margin-top:1rem;
+			}
+		}
+		@media (max-Width:1000px){
+			.LeaderShip{
+				width:98.6%;
+				height:50rem;
+				margin-top: 1rem;
+			}
+		}
+
+
+/*		................................................All CrativeBox Small Screen screen size....................................................      */
+
+		@media (max-Width:720px){
+			.CrativeBox{
+				width:100%;
+				height:auto;
+				margin-top:0rem;
+			}
+		}
+		@media (max-Width:720px){
+			.Box, .Box2{
+
+				width:100%;
+				height:auto;
+				margin-top:0rem;
+			}
+		}
+		@media (max-Width:720px){
+			.AdmisionArts{
+				height:auto;
+			}
+		}
+		@media (max-Width:720px){
+			.Admission, .Arts{
+				position: relative;
+				height:22rem;
+				width:95%;
+				margin-top:1rem;
+				transition:.6s;
+			}
+		}
+		@media (max-Width:720px){
+			.Results, .Activity, .Support{
+				position: relative;
+				height:13rem;
+				width:95%;
+				margin-top:1rem;
+				margin-left: 0rem;
+				transition:.6s;
+			}
+		}
+		@media (max-Width:720px){
+			.OneWord{
+				height:2rem;
+			}
+		}
+		@media (max-Width:720px){
+			.LeaderShip{
+				position: relative;
+				height:22rem;
+				width:95%;
+				margin-top:1rem;
+				transition:.6s;
+			}
+		}
+
+/* .........................................................END OF CrativeBox...................................................................*/	
+
+
+/*	...................................History_Data..............................................................................................*/
+
+
+.History_Data{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width:100%;
+	height:105vh;
+	background-color: transparent;
+}
+.History_Data .History_Data_Section{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	width:100%;
+	height:100%;
+}
+.Student_nationalities{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-left:0.7rem;
+	margin-top:0.3rem;
+	height:18rem;
+	width:40%;
+}
+.NATIONALITIES, .STUDENT_TEACHER_RATIO, .STUDENTS, .YEARS_OF_HISTORY{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-left:0.7rem;
+	margin-top:0.3rem;
+	height:18rem;
+	width:30%;
+}
+.NATIONALITIES img, .STUDENT_TEACHER_RATIO img, .STUDENTS img, .YEARS_OF_HISTORY img, .Student_nationalities img{
+	height:6rem;
+	width: 6rem;
+}
+.NATIONALITIES h1, .STUDENT_TEACHER_RATIO h1, .STUDENTS h1, .YEARS_OF_HISTORY h1, .Student_nationalities h1{
+	font-size:4.5rem;
+	color: transparent !important;
+	-webkit-text-stroke: 2px #00FEB0;
+}
+.NATIONALITIES h6, .STUDENT_TEACHER_RATIO h6, .STUDENTS h6, .YEARS_OF_HISTORY h6, .Student_nationalities h6{
+	color:#00FEB0 ;
+	font-size:1.3rem;
+}
+.Student_nationalities p{
+	color:#00FEB0 ;
+	font-size:1rem;
+}
+.MoreBtn{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width:100%;
+	height:3rem;
+}
+.highlight{
+/*	background-color: red;*/
+	animation:Blink 3s linear infinite;
+}
+@keyframes Blink{
+	0%{background-color:  red;}
+	20%{background-color: lime;}
+	40%{background-color:green;}
+}
+.MoreBtn input{
+	border: none;
+	outline:3px solid #00FEB0;
+	background-color:transparent;
+	padding-left: 1rem;
+	padding-right:1rem;
+	padding-top: 0.3rem;
+	padding-bottom: 0.3rem;
+	font-size:1rem;
+	text-transform: uppercase;
+	color: #000;
+	transition:.2s;
+}
+.MoreBtn input:hover{
+	background-color: #00FEB0;
+	color:#fff;
+}
+
+/*	...................................History_Data 720px Screen size...............................................................*/
+
+@media (max-Width:720px){
+	.History_Data{
+		width:100%;
+		height:70vh;
+	}
+}
+@media (max-Width:720px){
+	.NATIONALITIES img, .STUDENT_TEACHER_RATIO img, .STUDENTS img, .YEARS_OF_HISTORY img, .Student_nationalities img{
+		height:4rem;
+		width: 4rem;
+	}
+}
+@media (max-Width:720px){
+	.NATIONALITIES h1, .STUDENT_TEACHER_RATIO h1, .STUDENTS h1, .YEARS_OF_HISTORY h1, .Student_nationalities h1{
+		font-size:2rem;
+	}
+}
+@media (max-Width:720px){
+	.NATIONALITIES h6, .STUDENT_TEACHER_RATIO h6, .STUDENTS h6, .YEARS_OF_HISTORY h6, .Student_nationalities h6{
+		font-size:0.9rem;
+		text-align: center;
+	}
+}
+@media (max-Width:720px){
+	.NATIONALITIES, .STUDENT_TEACHER_RATIO, .STUDENTS, .YEARS_OF_HISTORY{
+		display: flex;
+		justify-content: space-between;
+		justify-items: center;
+		flex-direction: column;
+		height:10rem;
+		width:30%;
+	}
+}
+@media (max-Width:720px){
+	.Student_nationalities{
+		display: flex;
+		justify-content: space-between;
+		justify-items: center;
+		flex-direction: column;
+		height:16rem;
+		width:30%;
+	}
+}
+@media (max-Width:720px){
+	.Student_nationalities p{
+		font-size:0.8rem;
+		text-align: center;
+	}
+}
+@media (max-Width:720px){}
+@media (max-Width:720px){}
+@media (max-Width:720px){}
+@media (max-Width:720px){}
+
+/*..........................SmallPlay.........................*/
+
+.SmallPlay{
+	position: relative;
+	width: 100%;
+	height:25vh;
+	margin-top:1rem;
+}
+.SmallPlay .swiper-slide{
+	display: flex;
+	justify-content: center;
+	justify-items: center;
+	align-items: center;
+	margin-top:1.5rem;
+	height:7rem;
+	width:5rem;
+}
+.SmallPlay img {
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+}
+
+/*..........................SmallPlay 720px Screen size.........................*/
+
+@media (max-Width:720px){
+	.SmallPlay{
+		height:10vh;
+		border-top: 2px solid gray;
+	}
+}
+@media (max-Width:720px){
+	.SmallPlay .swiper-slide{
+		margin-top:0rem;
+		height:5.5rem;
+	}
+}
+
+/*..........................LocationANDContact.........................*/
+
+.LocationANDContact{
+	background-image: url('https://www.british-school.org/wp-content/uploads/2022/06/footerbg.png');
+	background-size: cover;
+	width:100%;
+	height:35vh;
+	padding-left:2rem;
+	padding-right:2rem;
+	padding-top:2rem;
+}
+.LocationANDContactInner{
+	display: flex;
+	justify-content: space-between;
+	justify-items: center;
+	align-items: center;
+}
+.LocationANDContactInner h6{
+	color: #fff;
+	font-size:1.3rem;
+	padding-bottom:1rem;
+}
+.Location p, .Contacts a{
+	list-style: none;
+	text-decoration: none;
+	line-height:0.8rem;
+	color: #fff;
+	transition:.2s;
+}
+.Contacts a:hover{
+	color: #6C6F94 ;
+}
+.Contacts{
+	display: flex;
+	flex-direction: column;
+	justify-items:right;
+	float: right;
+	text-align: right;
+}
+
+/*..........................LocationANDContact Screen 720px.........................*/
+
+@media (max-Width:720px){
+	.LocationANDContact{
+		height:45vh;
+	}
+}
+@media (max-Width:720px){
+	.LocationANDContactInner{
+		display: inline;
+	}
+}
+@media (max-Width:720px){
+	.Contacts{
+		float: left;
+		text-align: left;
+	}
+}
+
+/*..........................Footer.........................*/
+
+.Footer{
+	background-image: url('https://www.british-school.org/wp-content/uploads/2022/06/bottom_footer.jpg');
+	background-size: cover;
+	width:100%;
+	height:20vh;
+	padding-left:13rem;
+	padding-right:13rem;
+	padding-top:2rem;
+}
+.FooterInner{
+	display: inline;
+	justify-content: space-between;
+	justify-items: center;
+	align-items: center;
+}
+.FooterLink{
+	display: flex;
+	justify-content: center;
+}
+.FooterLink .Line, .FooterLink .NonLine{
+	position: relative;
+	width:9rem;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.FooterLink .Line::before{
+	position: absolute;
+	background-color: #fff;
+	content: '';
+	height:70%;
+	width:0.1rem;
+	top:0.2rem;
+	right:0;
+}
+.FooterLink a{
+	list-style: none;
+	text-decoration: none;
+	color: #fff;
+	font-weight: bold;
+	font-size:1rem;
+	text-transform: uppercase;
+	transition:.2s;
+}
+.FooterLink a:hover{
+	color: #6C6F94 ;
+}
+.MobileLInk{
+	display: flex;
+	justify-content:space-between;
+	justify-items: center;
+	align-items: center;
+}
+.MobileLInk p{
+	color:#fff;
+	font-size:0.8rem;
+}
+.MobileLInk a{
+	list-style: none;
+	text-decoration:none;
+	color: #fff;
+	border-bottom:1px solid #fff;
+	transition:.2s;
+}
+.MobileLInk a:hover{
+	color: #6C6F94 ;
+	border-bottom:1px solid #6C6F94;
+}
+
+/*..........................Footer screen 720px.........................*/
+
+@media (max-Width:720px){
+	.Footer{
+		width:100%;
+		height:25vh;
+		padding-left:1rem;
+		padding-right:1rem;
+		padding-top:1rem;
+		border-top:1px solid #fff;
+	}
+}
+@media (max-Width:720px){
+	.FooterLink a{
+		font-size:0.6rem;
+		font-weight: bold;
+	}
+}
+@media (max-Width:720px){
+	.MobileLInk{
+		display: inline;
+		justify-content:center;
+		justify-items: center;
+		align-items: center;
+		text-align: center;
+		margin-top:2rem;
+	}
+}
+@media (max-Width:720px){}
+@media (max-Width:720px){}
